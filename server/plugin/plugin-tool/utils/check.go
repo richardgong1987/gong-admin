@@ -3,8 +3,8 @@ package utils
 import (
 	"fmt"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/system"
 )
 
 func RegisterApis(apis ...system.SysApi) {

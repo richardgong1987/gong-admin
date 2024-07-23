@@ -2,7 +2,7 @@
 package system
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
+	"github.com/richardgong1987/server/global"
 )
 
 // 如果含有time.Time 请自行import time包

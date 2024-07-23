@@ -2,10 +2,10 @@ package system
 
 import (
 	"errors"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system/response"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/system"
+	"github.com/richardgong1987/server/model/system/request"
+	"github.com/richardgong1987/server/model/system/response"
 	"gorm.io/gorm"
 )
 

@@ -128,7 +128,7 @@
           >
         </a>
         <a
-          href="https://github.com/flipped-aurora/gin-vue-admin"
+          href="https://github.com/richardgong1987"
           target="_blank"
         >
           <img

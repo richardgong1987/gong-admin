@@ -31,7 +31,7 @@ const wikis = [
   },
   {
     title : "github 仓库",
-    url : 'https://github.com/flipped-aurora/gin-vue-admin'
+    url : 'https://github.com/richardgong1987'
   }
 
 ]

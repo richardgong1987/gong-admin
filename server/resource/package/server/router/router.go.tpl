@@ -1,7 +1,7 @@
 package {{.Package}}
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/middleware"
+	"github.com/richardgong1987/server/middleware"
 	"github.com/gin-gonic/gin"
 )
 

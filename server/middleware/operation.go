@@ -11,12 +11,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/utils"
+	"github.com/richardgong1987/server/utils"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
-	"github.com/flipped-aurora/gin-vue-admin/server/service"
 	"github.com/gin-gonic/gin"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/system"
+	"github.com/richardgong1987/server/service"
 	"go.uber.org/zap"
 )
 

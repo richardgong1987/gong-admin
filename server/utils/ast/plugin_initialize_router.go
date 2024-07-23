@@ -2,7 +2,7 @@ package ast
 
 import (
 	"fmt"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
+	"github.com/richardgong1987/server/global"
 	"go/ast"
 	"go/token"
 	"io"

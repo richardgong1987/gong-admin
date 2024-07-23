@@ -1,8 +1,8 @@
 package system
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system/response"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/system/response"
 )
 
 type AutoCodeService struct{}

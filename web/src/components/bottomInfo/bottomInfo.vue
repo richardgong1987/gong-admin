@@ -9,7 +9,7 @@
       <span>
         <a
           class="font-bold text-active"
-          href="https://github.com/flipped-aurora/gin-vue-admin"
+          href="https://github.com/richardgong1987"
         >Gin-Vue-Admin</a>
       </span>
     </div>

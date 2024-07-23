@@ -3,16 +3,16 @@ package core
 import (
 	"flag"
 	"fmt"
-	"github.com/flipped-aurora/gin-vue-admin/server/core/internal"
 	"github.com/gin-gonic/gin"
+	"github.com/richardgong1987/server/core/internal"
 	"os"
 	"path/filepath"
 
 	"github.com/fsnotify/fsnotify"
 	"github.com/spf13/viper"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	_ "github.com/flipped-aurora/gin-vue-admin/server/packfile"
+	"github.com/richardgong1987/server/global"
+	_ "github.com/richardgong1987/server/packfile"
 )
 
 // Viper //

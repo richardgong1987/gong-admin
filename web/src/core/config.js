@@ -15,7 +15,7 @@ export const viteLogo = (env) => {
     const chalk = require('chalk')
     console.log(
       chalk.green(
-        `> 欢迎使用Gin-Vue-Admin，开源地址：https://github.com/flipped-aurora/gin-vue-admin`
+        `> 欢迎使用Gin-Vue-Admin，开源地址：https://github.com/richardgong1987`
       )
     )
     console.log(
@@ -30,7 +30,7 @@ export const viteLogo = (env) => {
     )
     console.log(
       chalk.green(
-        `> 项目地址：https://github.com/flipped-aurora/gin-vue-admin`
+        `> 项目地址：https://github.com/richardgong1987`
       )
     )
     console.log(

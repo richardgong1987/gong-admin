@@ -2,11 +2,11 @@ package system
 
 import (
 	"context"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/utils"
 	"github.com/mholt/archiver/v4"
 	cp "github.com/otiai10/copy"
 	"github.com/pkg/errors"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/utils"
 	"go.uber.org/zap"
 	"io"
 	"mime/multipart"

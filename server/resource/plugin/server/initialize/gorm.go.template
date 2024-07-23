@@ -3,7 +3,7 @@ package initialize
 import (
 	"context"
 	"fmt"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
+	"github.com/richardgong1987/server/global"
 
 	"github.com/pkg/errors"
 	"go.uber.org/zap"

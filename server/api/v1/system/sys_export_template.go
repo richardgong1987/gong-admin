@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/common/request"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/common/response"
-	"github.com/flipped-aurora/gin-vue-admin/server/model/system"
-	systemReq "github.com/flipped-aurora/gin-vue-admin/server/model/system/request"
-	"github.com/flipped-aurora/gin-vue-admin/server/service"
-	"github.com/flipped-aurora/gin-vue-admin/server/utils"
 	"github.com/gin-gonic/gin"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/common/request"
+	"github.com/richardgong1987/server/model/common/response"
+	"github.com/richardgong1987/server/model/system"
+	systemReq "github.com/richardgong1987/server/model/system/request"
+	"github.com/richardgong1987/server/service"
+	"github.com/richardgong1987/server/utils"
 	"go.uber.org/zap"
 )
 

@@ -2,9 +2,9 @@ package core
 
 import (
 	"fmt"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
-	"github.com/flipped-aurora/gin-vue-admin/server/initialize"
-	"github.com/flipped-aurora/gin-vue-admin/server/service/system"
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/initialize"
+	"github.com/richardgong1987/server/service/system"
 	"go.uber.org/zap"
 )
 
@@ -40,7 +40,7 @@ func RunWindowsServer() {
 	欢迎使用 gin-vue-admin
 	当前版本:v2.7.0
     加群方式:微信号：shouzi_1994 QQ群：470239250
-	项目地址：https://github.com/flipped-aurora/gin-vue-admin
+	项目地址：https://github.com/richardgong1987
 	插件市场:https://plugin.gin-vue-admin.com
 	GVA讨论社区:https://support.qq.com/products/371961
 	默认自动化文档地址:http://127.0.0.1%s/swagger/index.html

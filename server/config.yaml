@@ -9,7 +9,7 @@ autocode:
     web: web/src
     root: /Users/richard/GolandProjects/GONG
     server: server
-    module: github.com/flipped-aurora/gin-vue-admin/server
+    module: github.com/richardgong1987/server
     ai-path: ""
 aws-s3:
     bucket: xxxxx-10005608
@@ -18,7 +18,7 @@ aws-s3:
     secret-id: your-secret-id
     secret-key: your-secret-key
     base-url: https://gin.vue.admin
-    path-prefix: github.com/flipped-aurora/gin-vue-admin/server
+    path-prefix: github.com/richardgong1987/server
     s3-force-path-style: false
     disable-ssl: false
 captcha:
@@ -201,10 +201,10 @@ tencent-cos:
     secret-id: your-secret-id
     secret-key: your-secret-key
     base-url: https://gin.vue.admin
-    path-prefix: github.com/flipped-aurora/gin-vue-admin/server
+    path-prefix: github.com/richardgong1987/server
 zap:
     level: info
-    prefix: '[github.com/flipped-aurora/gin-vue-admin/server]'
+    prefix: '[github.com/richardgong1987/server]'
     format: console
     director: log
     encode-level: LowercaseColorLevelEncoder

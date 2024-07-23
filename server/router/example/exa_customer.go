@@ -1,8 +1,8 @@
 package example
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/middleware"
 	"github.com/gin-gonic/gin"
+	"github.com/richardgong1987/server/middleware"
 )
 
 type CustomerRouter struct{}

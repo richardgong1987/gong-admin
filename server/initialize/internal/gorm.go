@@ -1,8 +1,8 @@
 package internal
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/config"
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
+	"github.com/richardgong1987/server/config"
+	"github.com/richardgong1987/server/global"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
 	"gorm.io/gorm/schema"
