@@ -72,12 +72,7 @@
         >
           新增
         </el-button>
-        <el-icon
-          class="cursor-pointer"
-          @click="toDoc('https://www.bilibili.com/video/BV1kv4y1g7nT?p=7&vd_source=f2640257c21e3b547a790461ed94875e')"
-        >
-          <VideoCameraFilled />
-        </el-icon>
+
         <el-button
           icon="delete"
           :disabled="!apis.length"

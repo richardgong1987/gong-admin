@@ -11,7 +11,7 @@ export function Commits(page) {
 
 export function Members() {
   return service({
-    url: 'https://api.github.com/orgs/FLIPPED-AURORA/members',
+    url: '',
     method: 'get'
   })
 }

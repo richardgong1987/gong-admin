@@ -43,7 +43,7 @@ const tableData = [
   },
   {
     ranking: 4,
-    title : "官网CMS系统：基于Gin-Vue-Admin 和 插件市场客户端开发基座开发的企业官网类（cms）系统",
+    title : "官网CMS系统：基于GONG 和 插件市场客户端开发基座开发的企业官网类（cms）系统",
     click_num : 292,
     hot : 145,
     link : "https://plugin.gin-vue-admin.com/#/layout/newPluginInfo?id=69"

@@ -98,11 +98,7 @@
           </div>
         </div>
       </div>
-      <div class="hidden md:block w-1/2 h-full float-right bg-[#194bfb]"><img
-        class="h-full"
-        src="@/assets/login_right_banner.jpg"
-        alt="banner"
-      ></div>
+      <div class="hidden md:block w-1/2 h-full float-right bg-[#194bfb]"></div>
     </div>
 
     <BottomInfo class="left-0 right-0 absolute bottom-3 mx-auto  w-full z-20">
@@ -135,16 +131,6 @@
             src="@/assets/github.png"
             class="w-8 h-8"
             alt="github"
-          >
-        </a>
-        <a
-          href="https://space.bilibili.com/322210472"
-          target="_blank"
-        >
-          <img
-            src="@/assets/video.png"
-            class="w-8 h-8"
-            alt="视频站"
           >
         </a>
       </div>

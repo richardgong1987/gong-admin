@@ -54,7 +54,7 @@
         </el-card>
         <el-card style="margin-top: 20px">
           <template #header>
-            <div>flipped-aurora团队</div>
+            <div>GONG团队</div>
           </template>
           <div>
             <el-row>
@@ -62,7 +62,7 @@
                 :span="8"
                 :offset="8"
               >
-                <a href="https://github.com/flipped-aurora">
+                <a href="">
                   <img
                     class="org-img dom-center"
                     src="@/assets/flipped-aurora.png"

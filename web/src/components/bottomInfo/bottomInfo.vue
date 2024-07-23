@@ -10,7 +10,7 @@
         <a
           class="font-bold text-active"
           href="https://github.com/richardgong1987"
-        >Gin-Vue-Admin</a>
+        >GONG</a>
       </span>
     </div>
     <slot />
@@ -19,8 +19,8 @@
       <span>
         <a
           class="font-bold text-active"
-          href="https://github.com/flipped-aurora"
-        >flipped-aurora团队</a>
+          href=""
+        >GONG团队</a>
       </span>
     </div>
   </div>

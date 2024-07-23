@@ -19,7 +19,7 @@ export default ({
   command,
   mode
 }) => {
-  AddSecret("")
+  AddSecret("0e4e708a81f91de1ad105cda37005af2")
   const NODE_ENV = mode || 'development'
   const envFiles = [
     `.env.${NODE_ENV}`

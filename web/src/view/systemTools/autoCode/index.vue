@@ -1,9 +1,5 @@
 <template>
   <div>
-    <warning-bar
-      href="https://www.bilibili.com/video/BV1kv4y1g7nT?p=3"
-      title="此功能为开发环境使用，不建议发布到生产，具体使用效果请点我观看。"
-    />
     <div class="gva-search-box">
       <div class="text-lg mb-2 text-gray-600">使用AI创建</div>
       <div class="relative">
