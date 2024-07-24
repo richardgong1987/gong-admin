@@ -102,38 +102,7 @@
     </div>
 
     <BottomInfo class="left-0 right-0 absolute bottom-3 mx-auto  w-full z-20">
-      <div class="links items-center justify-center gap-2 hidden md:flex">
-        <a
-          href="http://doc.henrongyi.top/"
-          target="_blank"
-        >
-          <img
-            src="@/assets/docs.png"
-            class="w-8 h-8"
-            alt="文档"
-          >
-        </a>
-        <a
-          href="https://support.qq.com/product/371961"
-          target="_blank"
-        >
-          <img
-            src="@/assets/kefu.png"
-            class="w-8 h-8"
-            alt="客服"
-          >
-        </a>
-        <a
-          href="https://github.com/richardgong1987"
-          target="_blank"
-        >
-          <img
-            src="@/assets/github.png"
-            class="w-8 h-8"
-            alt="github"
-          >
-        </a>
-      </div>
+
     </BottomInfo>
   </div>
 </template>

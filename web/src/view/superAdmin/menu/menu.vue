@@ -489,14 +489,6 @@
           >
             新增可控按钮
           </el-button>
-          <el-icon
-            class="cursor-pointer"
-            @click="
-              toDoc('https://www.gin-vue-admin.com/guide/web/button-auth.html')
-            "
-          >
-            <QuestionFilled />
-          </el-icon>
         </div>
 
         <el-table
