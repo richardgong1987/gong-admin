@@ -5,11 +5,10 @@ import (
 	"io"
 	"strings"
 
+	"github.com/gin-gonic/gin"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/common/response"
 	"github.com/richardgong1987/server/utils/request"
-
-	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"
 )
 
