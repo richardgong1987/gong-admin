@@ -4,6 +4,7 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gofrs/uuid/v5"
 	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/system"
 	systemReq "github.com/richardgong1987/server/model/system/request"
 	"net"
 )
@@ -122,4 +123,20 @@ func GetUserName(c *gin.Context) string {
 		waitUse := claims.(*systemReq.CustomClaims)
 		return waitUse.Username
 	}
+}
+
+func LoginToken(user system.Login) (token string, claims systemReq.CustomClaims, err error) {
+	j := &JWT{SigningKey: []byte(global.GVA_CONFIG.JWT.SigningKey)} // 唯一签名
+	claims = j.CreateClaims(systemReq.BaseClaims{
+		UUID:        user.GetUUID(),
+		ID:          user.GetUserId(),
+		NickName:    user.GetNickname(),
+		Username:    user.GetUsername(),
+		AuthorityId: user.GetAuthorityId(),
+	})
+	token, err = j.CreateToken(claims)
+	if err != nil {
+		return
+	}
+	return
 }
