@@ -212,3 +212,11 @@ zap:
     show-line: true
     log-in-console: true
     retention-day: -1
+# cloudflare r2 configuration
+cloudflare-r2:
+  bucket: xxxx0bucket
+  base-url: https://gin.vue.admin.com
+  path: uploads
+  account-id: xxx_account_id
+  access-key-id: xxx_key_id
+  secret-access-key: xxx_secret_key
