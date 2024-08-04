@@ -72,7 +72,6 @@
         >
           新增
         </el-button>
-
         <el-button
           icon="delete"
           :disabled="!apis.length"
@@ -478,8 +477,6 @@ import { toSQLLine } from '@/utils/stringFun'
 import WarningBar from '@/components/warningBar/warningBar.vue'
 import { ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { VideoCameraFilled } from '@element-plus/icons-vue'
-import { toDoc } from '@/utils/doc'
 import ExportExcel from '@/components/exportExcel/exportExcel.vue'
 import ExportTemplate from '@/components/exportExcel/exportTemplate.vue'
 import ImportExcel from '@/components/exportExcel/importExcel.vue'

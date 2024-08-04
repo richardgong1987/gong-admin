@@ -9,6 +9,7 @@
         >
           新增
         </el-button>
+
       </div>
       <el-table :data="tableData">
         <el-table-column
@@ -143,8 +144,6 @@ import {
 import { ref } from 'vue'
 import WarningBar from '@/components/warningBar/warningBar.vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { toDoc } from '@/utils/doc'
-import { VideoCameraFilled } from '@element-plus/icons-vue'
 
 defineOptions({
   name: 'AutoPkg',

@@ -413,7 +413,6 @@
           >
             新增菜单参数
           </el-button>
-
         </div>
         <el-table
           :data="form.parameters"
@@ -489,6 +488,14 @@
           >
             新增可控按钮
           </el-button>
+          <el-icon
+            class="cursor-pointer"
+            @click="
+              toDoc('https://www.gin-vue-admin.com/guide/web/button-auth.html')
+            "
+          >
+            <QuestionFilled />
+          </el-icon>
         </div>
 
         <el-table
@@ -551,7 +558,7 @@ import WarningBar from '@/components/warningBar/warningBar.vue'
 import { canRemoveAuthorityBtnApi } from '@/api/authorityBtn'
 import { reactive, ref, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { QuestionFilled, VideoCameraFilled } from '@element-plus/icons-vue'
+import { QuestionFilled } from '@element-plus/icons-vue'
 import pathInfo from '@/pathInfo.json'
 
 import { toDoc } from '@/utils/doc'

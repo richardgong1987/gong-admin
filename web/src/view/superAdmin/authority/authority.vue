@@ -185,8 +185,7 @@ import WarningBar from '@/components/warningBar/warningBar.vue'
 
 import { ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
-import { toDoc } from '@/utils/doc'
-import { VideoCameraFilled } from '@element-plus/icons-vue'
+
 
 defineOptions({
   name: 'Authority'

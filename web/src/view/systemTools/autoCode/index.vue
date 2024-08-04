@@ -1112,6 +1112,7 @@ const enterForm = async(isPreview) => {
         return false
       }
       form.value.humpPackageName = toSQLLine(form.value.packageName)
+      delete form.value.primaryField
       if (isPreview) {
         const data = await preview(form.value)
         preViewCode.value = data.data.autoCode
