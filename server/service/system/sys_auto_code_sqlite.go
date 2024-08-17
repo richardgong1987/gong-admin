@@ -13,8 +13,7 @@ var AutoCodeSqlite = new(autoCodeSqlite)
 type autoCodeSqlite struct{}
 
 // GetDB 获取数据库的所有数据库名
-// Author [piexlmax](https://github.com/piexlmax)
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 func (a *autoCodeSqlite) GetDB(businessDB string) (data []response.Db, err error) {
 	var entities []response.Db
 	sql := "PRAGMA database_list;"
@@ -40,8 +39,7 @@ func (a *autoCodeSqlite) GetDB(businessDB string) (data []response.Db, err error
 }
 
 // GetTables 获取数据库的所有表名
-// Author [piexlmax](https://github.com/piexlmax)
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 func (a *autoCodeSqlite) GetTables(businessDB string, dbName string) (data []response.Table, err error) {
 	var entities []response.Table
 	sql := `SELECT name FROM sqlite_master WHERE type='table'`
@@ -58,8 +56,7 @@ func (a *autoCodeSqlite) GetTables(businessDB string, dbName string) (data []res
 }
 
 // GetColumn 获取指定数据表的所有字段名,类型值等
-// Author [piexlmax](https://github.com/piexlmax)
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 func (a *autoCodeSqlite) GetColumn(businessDB string, tableName string, dbName string) (data []response.Column, err error) {
 	var entities []response.Column
 	sql := fmt.Sprintf("PRAGMA table_info(%s);", tableName)

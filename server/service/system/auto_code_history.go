@@ -26,7 +26,7 @@ var AutocodeHistory = new(autoCodeHistory)
 type autoCodeHistory struct{}
 
 // Create 创建代码生成器历史记录
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) Create(ctx context.Context, info request.SysAutoHistoryCreate) error {
 	create := info.Create()
@@ -38,7 +38,7 @@ func (s *autoCodeHistory) Create(ctx context.Context, info request.SysAutoHistor
 }
 
 // First 根据id获取代码生成器历史的数据
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) First(ctx context.Context, info common.GetById) (string, error) {
 	var meta string
@@ -50,7 +50,7 @@ func (s *autoCodeHistory) First(ctx context.Context, info common.GetById) (strin
 }
 
 // Repeat 检测重复
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) Repeat(businessDB, structName, Package string) bool {
 	var count int64
@@ -59,7 +59,7 @@ func (s *autoCodeHistory) Repeat(businessDB, structName, Package string) bool {
 }
 
 // RollBack 回滚
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) RollBack(ctx context.Context, info request.SysAutoHistoryRollBack) error {
 	var history model.SysAutoCodeHistory
@@ -176,7 +176,7 @@ func (s *autoCodeHistory) RollBack(ctx context.Context, info request.SysAutoHist
 }
 
 // Delete 删除历史数据
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) Delete(ctx context.Context, info common.GetById) error {
 	err := global.GVA_DB.WithContext(ctx).Where("id = ?", info.Uint()).Delete(&model.SysAutoCodeHistory{}).Error
@@ -187,7 +187,7 @@ func (s *autoCodeHistory) Delete(ctx context.Context, info common.GetById) error
 }
 
 // GetList 获取系统历史数据
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 // Author [songzhibin97](https://github.com/songzhibin97)
 func (s *autoCodeHistory) GetList(ctx context.Context, info common.PageInfo) (list []model.SysAutoCodeHistory, total int64, err error) {
 	var entities []model.SysAutoCodeHistory

@@ -104,7 +104,7 @@ func (r *AutoCode) Menu(template string) model.SysBaseMenu {
 }
 
 // Pretreatment 预处理
-// Author [SliverHorn](https://github.com/SliverHorn)
+
 func (r *AutoCode) Pretreatment() error {
 	if token.IsKeyword(r.Abbreviation) {
 		r.Abbreviation = r.Abbreviation + "_"
