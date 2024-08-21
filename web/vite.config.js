@@ -11,14 +11,13 @@ import vuePlugin from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import fullImportPlugin from './vitePlugin/fullImport/fullImport.js'
 import VueFilePathPlugin from './vitePlugin/componentName/index.js'
-import { svgBuilder } from 'vite-auto-import-svg'
 import { AddSecret } from './vitePlugin/secret'
+import { svgBuilder } from './vitePlugin/vite-auto-import-svg'
 // @see https://cn.vitejs.dev/config/
 export default ({
-  command,
   mode
 }) => {
-  AddSecret("0e4e708a81f91de1ad105cda37005af2")
+  AddSecret("")
   const NODE_ENV = mode || 'development'
   const envFiles = [
     `.env.${NODE_ENV}`
