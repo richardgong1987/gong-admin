@@ -12,7 +12,6 @@ import (
 	"github.com/spf13/viper"
 
 	"github.com/richardgong1987/server/global"
-	_ "github.com/richardgong1987/server/packfile"
 )
 
 // Viper //

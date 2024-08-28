@@ -504,6 +504,15 @@
             </template>
           </el-table-column>
           <el-table-column
+              align="left"
+              prop="excel"
+              label="导入/导出"
+          >
+            <template #default="{row}">
+              <el-checkbox v-model="row.excel" />
+            </template>
+          </el-table-column>
+          <el-table-column
             align="left"
             prop="fieldJson"
             width="160px"
@@ -804,6 +813,7 @@ const llmAutoFunc = async (mode) =>{
               form: true,
               desc: true,
               table: true,
+              excel: false,
               dataSource: {
                 association:1,
                 table: '',
@@ -960,6 +970,7 @@ const fieldTemplate = {
   form: true,
   desc: true,
   table: true,
+  excel: false,
   errorText: '',
   primaryKey: false,
   clearable: true,
@@ -1254,6 +1265,7 @@ const getColumnFunc = async() => {
                 dictType: '',
                 form: true,
                 table: true,
+                excel: false,
                 desc: true,
                 dataSource: {
                   association:1,
