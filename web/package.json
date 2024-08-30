@@ -7,7 +7,10 @@
         "build": "vite build --mode production",
         "limit-build": "npm install increase-memory-limit-fixbug cross-env -g && npm run fix-memory-limit && node ./limit && npm run build",
         "preview": "vite preview",
-        "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit"
+        "fix-memory-limit": "cross-env LIMIT=4096 increase-memory-limit",
+        "test": "vitest --environment jsdom",
+        "cy": "cypress open",
+        "e2e": "cypress run --spec cypress/e2e/0-biz/*.cy.js"
     },
     "dependencies": {
         "@element-plus/icons-vue": "^2.1.0",
@@ -62,6 +65,9 @@
         "vite": "^4.4.6",
         "vite-plugin-banner": "^0.7.0",
         "vite-plugin-importer": "^0.2.5",
-        "vite-plugin-vue-devtools": "^7.3.7"
+        "vite-plugin-vue-devtools": "^7.3.7",
+        "cypress": "^13.8.0",
+        "jsdom": "^24.0.0",
+        "autoprefixer": "^10.4.19"
     }
 }

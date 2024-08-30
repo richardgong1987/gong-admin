@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"github.com/gin-gonic/gin"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/initialize"
 	"github.com/richardgong1987/server/service/system"
@@ -12,7 +13,7 @@ type server interface {
 	ListenAndServe() error
 }
 
-func RunWindowsServer() {
+func RunWindowsServer(isUnitTest bool) *gin.Engine {
 	if global.GVA_CONFIG.System.UseMultipoint || global.GVA_CONFIG.System.UseRedis {
 		// 初始化redis服务
 		initialize.Redis()
@@ -35,6 +36,13 @@ func RunWindowsServer() {
 	s := initServer(address, Router)
 
 	global.GVA_LOG.Info("server run success on ", zap.String("address", address))
+	if isUnitTest {
+		go func() {
+			global.GVA_LOG.Error(s.ListenAndServe().Error())
+		}()
+	} else {
+		global.GVA_LOG.Error(s.ListenAndServe().Error())
+	}
 
-	global.GVA_LOG.Error(s.ListenAndServe().Error())
+	return Router
 }
