@@ -1,10 +1,3 @@
-aliyun-oss:
-    endpoint: yourEndpoint
-    access-key-id: yourAccessKeyId
-    access-key-secret: yourAccessKeySecret
-    bucket-name: yourBucketName
-    bucket-url: yourBucketUrl
-    base-path: yourBasePath
 autocode:
     web: web/src
     root: /Users/richard/GolandProjects/GONG
@@ -83,35 +76,6 @@ jwt:
 local:
     path: uploads/file
     store-path: uploads/file
-mongo:
-    coll: ""
-    options: ""
-    database: ""
-    username: ""
-    password: ""
-    auth-source: ""
-    min-pool-size: 0
-    max-pool-size: 100
-    socket-timeout-ms: 0
-    connect-timeout-ms: 0
-    is-zap: false
-    hosts:
-        - host: ""
-          port: ""
-mssql:
-    prefix: ""
-    port: ""
-    config: ""
-    db-name: ""
-    username: ""
-    password: ""
-    path: ""
-    engine: ""
-    log-mode: ""
-    max-idle-conns: 10
-    max-open-conns: 100
-    singular: false
-    log-zap: false
 mysql:
     prefix: ""
     port: "3306"
@@ -126,42 +90,6 @@ mysql:
     max-open-conns: 100
     singular: false
     log-zap: false
-oracle:
-    prefix: ""
-    port: ""
-    config: ""
-    db-name: ""
-    username: ""
-    password: ""
-    path: ""
-    engine: ""
-    log-mode: ""
-    max-idle-conns: 10
-    max-open-conns: 100
-    singular: false
-    log-zap: false
-pgsql:
-    prefix: ""
-    port: ""
-    config: ""
-    db-name: ""
-    username: ""
-    password: ""
-    path: ""
-    engine: ""
-    log-mode: ""
-    max-idle-conns: 10
-    max-open-conns: 100
-    singular: false
-    log-zap: false
-qiniu:
-    zone: ZoneHuaDong
-    bucket: ""
-    img-path: ""
-    access-key: ""
-    secret-key: ""
-    use-https: false
-    use-cdn-domains: false
 redis:
     addr: 127.0.0.1:6379
     password: ""
@@ -171,20 +99,6 @@ redis:
         - 172.21.0.3:7000
         - 172.21.0.4:7001
         - 172.21.0.2:7002
-sqlite:
-    prefix: ""
-    port: ""
-    config: ""
-    db-name: ""
-    username: ""
-    password: ""
-    path: ""
-    engine: ""
-    log-mode: ""
-    max-idle-conns: 10
-    max-open-conns: 100
-    singular: false
-    log-zap: false
 system:
     db-type: mysql
     oss-type: local
@@ -198,13 +112,6 @@ system:
     #  严格角色模式 打开后权限将会存在上下级关系
     use-strict-auth: false
 
-tencent-cos:
-    bucket: xxxxx-10005608
-    region: ap-shanghai
-    secret-id: your-secret-id
-    secret-key: your-secret-key
-    base-url: https://gin.vue.admin
-    path-prefix: github.com/richardgong1987/server
 zap:
     level: info
     prefix: '[github.com/richardgong1987/server]'
