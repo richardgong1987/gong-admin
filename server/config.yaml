@@ -69,7 +69,7 @@ hua-wei-obs:
     access-key: you-access-key
     secret-key: you-secret-key
 jwt:
-    signing-key: c5de87c9-1ee2-437b-83b7-7e319d9d049d
+    signing-key: 837db489-ac6a-4aed-8e89-00534cdae7a3
     expires-time: 7d
     buffer-time: 1d
     issuer: qmPlus
@@ -80,7 +80,7 @@ mysql:
     prefix: ""
     port: "3306"
     config: charset=utf8mb4&parseTime=True&loc=Local
-    db-name: gong
+    db-name: gva
     username: root
     password: password
     path: 127.0.0.1
@@ -109,7 +109,6 @@ system:
     use-multipoint: false
     use-redis: false
     use-mongo: false
-    #  严格角色模式 打开后权限将会存在上下级关系
     use-strict-auth: false
 
 zap:
@@ -122,11 +121,3 @@ zap:
     show-line: true
     log-in-console: true
     retention-day: -1
-# cloudflare r2 configuration
-cloudflare-r2:
-  bucket: xxxx0bucket
-  base-url: https://gin.vue.admin.com
-  path: uploads
-  account-id: xxx_account_id
-  access-key-id: xxx_key_id
-  secret-access-key: xxx_secret_key
