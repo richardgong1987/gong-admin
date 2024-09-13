@@ -2,10 +2,9 @@ package initialize
 
 import (
 	"context"
-
+	"github.com/redis/go-redis/v9"
 	"github.com/richardgong1987/server/config"
 	"github.com/richardgong1987/server/global"
-
 	"go.uber.org/zap"
 )
 

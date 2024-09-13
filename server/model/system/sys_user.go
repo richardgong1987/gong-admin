@@ -1,8 +1,8 @@
 package system
 
 import (
-	"github.com/flipped-aurora/gin-vue-admin/server/global"
 	"github.com/gofrs/uuid/v5"
+	"github.com/richardgong1987/server/global"
 	"gorm.io/datatypes"
 )
 
