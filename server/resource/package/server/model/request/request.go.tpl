@@ -1,11 +1,14 @@
 package request
 
 import (
+{{- if not .OnlyTemplate }}
 	"github.com/richardgong1987/server/model/common/request"
 	{{ if or .HasSearchTimer .GvaModel}}"time"{{ end }}
+{{- end }}
 )
 
 type {{.StructName}}Search struct{
+{{- if not .OnlyTemplate}}
 {{- if .GvaModel }}
     StartCreatedAt *time.Time `json:"startCreatedAt" form:"startCreatedAt"`
     EndCreatedAt   *time.Time `json:"endCreatedAt" form:"endCreatedAt"`
@@ -31,4 +34,5 @@ type {{.StructName}}Search struct{
     Sort  string `json:"sort" form:"sort"`
     Order string `json:"order" form:"order"`
     {{- end}}
+{{- end}}
 }

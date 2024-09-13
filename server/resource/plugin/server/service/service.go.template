@@ -1,12 +1,14 @@
 package service
 
 import (
+{{- if not .OnlyTemplate }}
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/plugin/{{.Package}}/model"
     "github.com/richardgong1987/server/plugin/{{.Package}}/model/request"
     {{- if .AutoCreateResource }}
     "gorm.io/gorm"
     {{- end}}
+{{- end }}
 )
 
 var {{.StructName}} = new({{.Abbreviation}})
@@ -19,7 +21,7 @@ type {{.Abbreviation}} struct {}
 {{- else}}
  {{- $db =  printf "global.MustGetGlobalDBByDBName(\"%s\")" .BusinessDB   }}
 {{- end}}
-
+{{- if not .OnlyTemplate }}
 // Create{{.StructName}} 创建{{.Description}}记录
 
 func (s *{{.Abbreviation}}) Create{{.StructName}}({{.Abbreviation}} *model.{{.StructName}}) (err error) {
@@ -80,7 +82,7 @@ func (s *{{.Abbreviation}}) Get{{.StructName}}({{.PrimaryField.FieldJson}} strin
 }
 
 // Get{{.StructName}}InfoList 分页获取{{.Description}}记录
-
+// Author [piexlmax](https://github.com/piexlmax)
 func (s *{{.Abbreviation}}) Get{{.StructName}}InfoList(info request.{{.StructName}}Search) (list []model.{{.StructName}}, total int64, err error) {
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
