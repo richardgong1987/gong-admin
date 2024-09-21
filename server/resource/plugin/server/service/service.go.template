@@ -82,7 +82,7 @@ func (s *{{.Abbreviation}}) Get{{.StructName}}({{.PrimaryField.FieldJson}} strin
 }
 
 // Get{{.StructName}}InfoList 分页获取{{.Description}}记录
-// Author [piexlmax](https://github.com/piexlmax)
+// Author [yourname](https://github.com/yourname)
 func (s *{{.Abbreviation}}) Get{{.StructName}}InfoList(info request.{{.StructName}}Search) (list []model.{{.StructName}}, total int64, err error) {
 	limit := info.PageSize
 	offset := info.PageSize * (info.Page - 1)
@@ -155,3 +155,8 @@ func (s *{{.Abbreviation}})Get{{.StructName}}DataSource() (res map[string][]map[
 	return
 }
 {{- end }}
+{{- end }}
+
+func (s *{{.Abbreviation}})Get{{.StructName}}Public() {
+
+}
