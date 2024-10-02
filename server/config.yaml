@@ -1,15 +1,32 @@
 autocode:
     web: web/src
-    root: /Users/richard/GolandProjects/GONG
+    root: /Users/hanjingong/GolandProjects/GONG
     server: server
     module: github.com/richardgong1987/server
     ai-path: ""
+aws-s3:
+    bucket: ""
+    region: ""
+    endpoint: ""
+    secret-id: ""
+    secret-key: ""
+    base-url: ""
+    path-prefix: ""
+    s3-force-path-style: false
+    disable-ssl: false
 captcha:
     key-long: 6
     img-width: 240
     img-height: 80
     open-captcha: 0
     open-captcha-timeout: 3600
+cloudflare-r2:
+    bucket: ""
+    base-url: ""
+    path: ""
+    account-id: ""
+    access-key-id: ""
+    secret-access-key: ""
 cors:
     mode: strict-whitelist
     whitelist:
@@ -52,14 +69,8 @@ email:
     is-ssl: true
 excel:
     dir: ./resource/excel/
-hua-wei-obs:
-    path: you-path
-    bucket: you-bucket
-    endpoint: you-endpoint
-    access-key: you-access-key
-    secret-key: you-secret-key
 jwt:
-    signing-key: 837db489-ac6a-4aed-8e89-00534cdae7a3
+    signing-key: 88a6daa6-5039-4e33-876b-205386eea2ff
     expires-time: 7d
     buffer-time: 1d
     issuer: qmPlus
@@ -68,24 +79,63 @@ local:
     store-path: uploads/file
 mysql:
     prefix: ""
-    port: ""
+    port: "3306"
     config: charset=utf8mb4&parseTime=True&loc=Local
-    db-name:
-    username:
-    password:
-    path:
+    db-name: gong
+    username: root
+    password: password
+    path: 127.0.0.1
     engine: ""
     log-mode: error
     max-idle-conns: 10
     max-open-conns: 100
     singular: false
     log-zap: false
+oracle:
+    prefix: ""
+    port: ""
+    config: ""
+    db-name: ""
+    username: ""
+    password: ""
+    path: ""
+    engine: ""
+    log-mode: ""
+    max-idle-conns: 0
+    max-open-conns: 0
+    singular: false
+    log-zap: false
+pgsql:
+    prefix: ""
+    port: ""
+    config: ""
+    db-name: ""
+    username: ""
+    password: ""
+    path: ""
+    engine: ""
+    log-mode: ""
+    max-idle-conns: 0
+    max-open-conns: 0
+    singular: false
+    log-zap: false
 redis:
+    name: ""
     addr: 127.0.0.1:6379
     password: ""
     db: 0
     useCluster: false
     clusterAddrs:
+        - 172.21.0.3:7000
+        - 172.21.0.4:7001
+        - 172.21.0.2:7002
+redis-list:
+    - name: cache
+      addr: 127.0.0.1:6379
+      password: ""
+      db: 0
+      useCluster: false
+      clusterAddrs:
         - 172.21.0.3:7000
         - 172.21.0.4:7001
         - 172.21.0.2:7002
@@ -100,7 +150,6 @@ system:
     use-redis: false
     use-mongo: false
     use-strict-auth: false
-
 zap:
     level: info
     prefix: '[github.com/richardgong1987/server]'
@@ -111,14 +160,3 @@ zap:
     show-line: true
     log-in-console: true
     retention-day: -1
-# redis-list configuration
-redis-list:
-  - name: cache           # 数据库的名称,注意: name 需要在 redis-list 中唯一
-    useCluster: false     # 是否使用redis集群模式
-    addr: 127.0.0.1:6379  # 使用集群模式addr和db默认无效
-    password: ""
-    db: 0
-    clusterAddrs:
-      - "172.21.0.3:7000"
-      - "172.21.0.4:7001"
-      - "172.21.0.2:7002"
