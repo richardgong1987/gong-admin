@@ -32,7 +32,6 @@ func RunWindowsServer(isUnitTest bool) *gin.Engine {
 	}
 
 	Router := initialize.Routers()
-	Router.Static("/form-generator", "./resource/page")
 
 	address := fmt.Sprintf(":%d", global.GVA_CONFIG.System.Addr)
 	s := initServer(address, Router)
