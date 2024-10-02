@@ -4,16 +4,6 @@ autocode:
     server: server
     module: github.com/richardgong1987/server
     ai-path: ""
-aws-s3:
-    bucket: xxxxx-10005608
-    region: ap-shanghai
-    endpoint: ""
-    secret-id: your-secret-id
-    secret-key: your-secret-key
-    base-url: https://gin.vue.admin
-    path-prefix: github.com/richardgong1987/server
-    s3-force-path-style: false
-    disable-ssl: false
 captcha:
     key-long: 6
     img-width: 240
@@ -78,12 +68,12 @@ local:
     store-path: uploads/file
 mysql:
     prefix: ""
-    port: "3306"
+    port: ""
     config: charset=utf8mb4&parseTime=True&loc=Local
-    db-name: gva
-    username: root
-    password: password
-    path: 127.0.0.1
+    db-name:
+    username:
+    password:
+    path:
     engine: ""
     log-mode: error
     max-idle-conns: 10

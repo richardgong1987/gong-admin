@@ -1,12 +1,19 @@
 package utils
 
-import "github.com/luabagg/orcgen"
+import (
+	"github.com/go-rod/rod/lib/proto"
+	"github.com/luabagg/orcgen/v2"
+)
 
-var htmltoPDFTool = orcgen.New(orcgen.PDF)
+var htmltoPDFTool = orcgen.NewHandler(proto.PagePrintToPDF{
+	Landscape:         true,
+	PrintBackground:   true,
+	PreferCSSPageSize: true,
+})
 
 func HtmlToPDF(html []byte) ([]byte, error) {
 	htmltoPDFTool.SetFullPage(true)
-	fi, err := htmltoPDFTool.ConvertHTML(html)
+	fi, err := orcgen.ConvertHTML(htmltoPDFTool, html)
 	if err != nil {
 		return nil, err
 	}
