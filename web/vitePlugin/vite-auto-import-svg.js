@@ -44,17 +44,18 @@ function findSvgFile(dir) {
 }
 module.exports.svgBuilder = (path) => {
     const sec = global["gva-secret"]   // 获取主项目node传过来的验证码
-    const key = "安全码"  // 安全码
+    const key = "0e4e708a81f91de1ad105cda37005af2"  // 安全码
     if (path === '') return
     const res = findSvgFile(path)
     const timestamp = Date.now()
-    const secretCode = '指纹哈希'  // 指纹哈希
+    const secretCode = '0e4e708a81f91de1ad105cda37005af2'  // 指纹哈希
     return {
         name: 'svg-transform',
         transformIndexHtml(html) {
+
             const keywordMetaTagRegex = /<meta\s+(?:name=["']keywords["']\s+content=["'](.*?)["']|content=["'](.*?)["']\s+name=["']keywords["'])\s*\/?>/i;
             // 这里是你的指纹索引关键部分 暴露给资源引擎的
-            const newKeywords = `Gin,Vue,Admin,Gin-Vue-Admin,GVA,gin-vue-admin,后台管理框架,vue后台管理框架,gin-vue-admin文档,gin-vue-admin首页,gin-vue-admin,${timestamp},${secretCode}`;
+            const newKeywords = `${timestamp},${secretCode}`;
             let newHtml = html;
             if(!compareSecWithSecretCode(sec, key)){  // 如果不符合匹配的安全规则 则把原来的指纹哈希和关键字挂回去
                 if (keywordMetaTagRegex.test(html)) {
@@ -92,5 +93,7 @@ module.exports.svgBuilder = (path) => {
 
 // 这里我给调整为了一个简单的加密方式 按照偶数位匹配  如果你需要其他的加密玩法 可以自己调整这里
 function compareSecWithSecretCode(sec, secretCode) {
+    // 在这里写你的指纹验证逻辑
     return true;
 }
+
