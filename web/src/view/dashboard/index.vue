@@ -2,7 +2,11 @@
   <h1>Hello world</h1>
 </template>
 
-<script setup></script>
+<script setup>
+defineOptions({
+  name: 'Dashboard'
+})
+</script>
 
 <style lang="scss" scoped>
 </style>
