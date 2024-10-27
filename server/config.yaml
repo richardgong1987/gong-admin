@@ -14,6 +14,15 @@ aws-s3:
     path-prefix: ""
     s3-force-path-style: false
     disable-ssl: false
+# minio oss configuration
+minio:
+  endpoint: yourEndpoint
+  access-key-id: yourAccessKeyId
+  access-key-secret: yourAccessKeySecret
+  bucket-name: yourBucketName
+  use-ssl: false
+  base-path: ""
+  bucket-url: "http://host:9000/yourBucketName"
 captcha:
     key-long: 6
     img-width: 240

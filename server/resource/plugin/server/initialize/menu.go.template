@@ -2,8 +2,8 @@ package initialize
 
 import (
 	"context"
-	model "github.com/richardgong1987/server/model/system"
-	"github.com/richardgong1987/server/plugin/plugin-tool/utils"
+	model "{{.Module}}/model/system"
+	"{{.Module}}/plugin/plugin-tool/utils"
 )
 
 func Menu(ctx context.Context) {

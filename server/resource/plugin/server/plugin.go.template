@@ -2,8 +2,8 @@ package {{ .Package }}
 
 import (
 	"context"
-	"github.com/richardgong1987/server/plugin/{{ .Package }}/initialize"
-	interfaces "github.com/richardgong1987/server/utils/plugin/v2"
+	"{{.Module}}/plugin/{{ .Package }}/initialize"
+	interfaces "{{.Module}}/utils/plugin/v2"
 	"github.com/gin-gonic/gin"
 )
 

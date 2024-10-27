@@ -3,8 +3,7 @@ package initialize
 import (
 	"context"
 	"fmt"
-	"github.com/richardgong1987/server/global"
-
+	"{{.Module}}/global"
 	"github.com/pkg/errors"
 	"go.uber.org/zap"
 )

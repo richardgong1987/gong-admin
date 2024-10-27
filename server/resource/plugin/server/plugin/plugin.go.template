@@ -1,5 +1,5 @@
 package plugin
 
-import "github.com/richardgong1987/server/plugin/{{ .Package }}/config"
+import "{{.Module}}/plugin/{{ .Package }}/config"
 
 var Config config.Config
