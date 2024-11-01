@@ -15,7 +15,7 @@
         <el-table-column
           align="left"
           label="id"
-          width="60"
+          width="120"
           prop="ID"
         />
         <el-table-column
@@ -51,7 +51,6 @@
           <template #default="scope">
             <el-button
               icon="delete"
-
               type="primary"
               link
               @click="deleteApiFunc(scope.row)"

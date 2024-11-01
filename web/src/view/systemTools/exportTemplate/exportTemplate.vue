@@ -152,6 +152,13 @@
         >
           <template #default="scope">
             <el-button
+                type="primary"
+                link
+                icon="edit-pen"
+                class="table-button"
+                @click="showCode(scope.row)"
+            >代码</el-button>
+            <el-button
               type="primary"
               link
               icon="edit"
@@ -453,6 +460,36 @@
         </el-form-item>
       </el-form>
     </el-drawer>
+
+    <el-drawer
+        v-model="codeVisible"
+        size="60%"
+        :before-close="closeDialog"
+        :title="type==='create'?'添加':'修改'"
+        :show-close="false"
+        destroy-on-close
+    >
+
+      <template #header>
+        <div class="flex justify-between items-center">
+          <span class="text-lg">模板</span>
+          <div>
+            <el-button
+                type="primary"
+                @click="closeDialog"
+            >确 定</el-button>
+          </div>
+        </div>
+      </template>
+      <codemirror
+          v-model="webCode"
+          placeholder="Code goes here..."
+          :style="{ height: '800px',width:'100%' }"
+          :indent-with-tab="true"
+          :tab-size="2"
+          :extensions=" [vue(), oneDark]"
+      />
+    </el-drawer>
   </div>
 </template>
 
@@ -472,7 +509,10 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { ref, reactive } from 'vue'
 import WarningBar from '@/components/warningBar/warningBar.vue'
 import {getDB, getTable, getColumn, butler} from '@/api/autoCode'
-
+import {vue} from "@codemirror/lang-vue";
+import {oneDark} from "@codemirror/theme-one-dark";
+import {Codemirror} from "vue-codemirror";
+import {getCode} from './code'
 defineOptions({
   name: 'ExportTemplate'
 })
@@ -867,9 +907,16 @@ const deleteSysExportTemplateFunc = async(row) => {
     getTableData()
   }
 }
-
+const codeVisible = ref(false)
 // 弹窗控制标记
 const dialogFormVisible = ref(false)
+
+const webCode = ref("")
+
+const showCode = (row) =>{
+  webCode.value = getCode(row.templateID)
+  codeVisible.value = true
+}
 
 // 打开弹窗
 const openDialog = () => {
@@ -879,7 +926,9 @@ const openDialog = () => {
 
 // 关闭弹窗
 const closeDialog = () => {
+  codeVisible.value = false
   dialogFormVisible.value = false
+  activeRow.value = {}
   formData.value = {
     name: '',
     tableName: '',
