@@ -735,7 +735,6 @@ JOINS模式下不支持导入
     elSearchFormRef.value?.validate(async (valid) => {
       if (!valid) return
       page.value = 1
-      pageSize.value = 10
       getTableData()
     })
   }
