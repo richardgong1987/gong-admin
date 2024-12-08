@@ -1,3 +1,5 @@
+package initialize
+
 /*
  * @Author: 逆光飞翔 191180776@qq.com
  * @Date: 2022-12-08 17:25:49
@@ -6,7 +8,6 @@
  * @FilePath: \server\initialize\gorm_mssql.go
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
-package initialize
 
 import (
 	"github.com/richardgong1987/server/config"
