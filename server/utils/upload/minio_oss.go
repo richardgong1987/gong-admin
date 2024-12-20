@@ -90,8 +90,10 @@ func (m *Minio) UploadFile(file *multipart.FileHeader) (filePathres, key string,
 }
 
 func (m *Minio) DeleteFile(key string) error {
+	ctx, cancel := context.WithTimeout(context.Background(), time.Second*5)
+	defer cancel()
+
 	// Delete the object from MinIO
-	ctx, _ := context.WithTimeout(context.Background(), time.Second*5)
 	err := m.Client.RemoveObject(ctx, m.bucket, key, minio.RemoveObjectOptions{})
 	return err
 }
