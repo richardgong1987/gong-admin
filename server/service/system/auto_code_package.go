@@ -3,6 +3,12 @@ package system
 import (
 	"context"
 	"fmt"
+	"go/token"
+	"os"
+	"path/filepath"
+	"strings"
+	"text/template"
+
 	"github.com/pkg/errors"
 	"github.com/richardgong1987/server/global"
 	common "github.com/richardgong1987/server/model/common/request"
@@ -10,12 +16,7 @@ import (
 	"github.com/richardgong1987/server/model/system/request"
 	"github.com/richardgong1987/server/utils"
 	"github.com/richardgong1987/server/utils/ast"
-	"go/token"
 	"gorm.io/gorm"
-	"os"
-	"path/filepath"
-	"strings"
-	"text/template"
 )
 
 var AutoCodePackage = new(autoCodePackage)
@@ -159,7 +160,7 @@ func (s *autoCodePackage) All(ctx context.Context) (entities []model.SysAutoCode
 			//dir目录需要包含所有的dirNameMap
 			for k := 0; k < len(dir); k++ {
 				if dir[k].IsDir() {
-					if _, ok := dirNameMap[dir[k].Name()]; ok {
+					if ok := dirNameMap[dir[k].Name()]; ok {
 						delete(dirNameMap, dir[k].Name())
 					}
 				}

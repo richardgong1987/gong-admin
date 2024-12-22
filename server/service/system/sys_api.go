@@ -3,12 +3,20 @@ package system
 import (
 	"errors"
 	"fmt"
+<<<<<<< HEAD
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/common/request"
 	"github.com/richardgong1987/server/model/system"
 	systemRes "github.com/richardgong1987/server/model/system/response"
-	"gorm.io/gorm"
+=======
 	"strings"
+
+	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/common/request"
+	"github.com/richardgong1987/server/model/system"
+	systemRes "github.com/richardgong1987/server/model/system/response"
+>>>>>>> cb23254152400662d1c87f436e3b38d8e420ff5a
+	"gorm.io/gorm"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)
@@ -135,7 +143,7 @@ func (apiService *ApiService) IgnoreApi(ignoreApi system.SysIgnoreApi) (err erro
 func (apiService *ApiService) EnterSyncApi(syncApis systemRes.SysSyncApis) (err error) {
 	return global.GVA_DB.Transaction(func(tx *gorm.DB) error {
 		var txErr error
-		if syncApis.NewApis != nil && len(syncApis.NewApis) > 0 {
+		if len(syncApis.NewApis) > 0 {
 			txErr = tx.Create(&syncApis.NewApis).Error
 			if txErr != nil {
 				return txErr
