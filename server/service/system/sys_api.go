@@ -3,19 +3,12 @@ package system
 import (
 	"errors"
 	"fmt"
-<<<<<<< HEAD
-	"github.com/richardgong1987/server/global"
-	"github.com/richardgong1987/server/model/common/request"
-	"github.com/richardgong1987/server/model/system"
-	systemRes "github.com/richardgong1987/server/model/system/response"
-=======
 	"strings"
 
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/common/request"
 	"github.com/richardgong1987/server/model/system"
 	systemRes "github.com/richardgong1987/server/model/system/response"
->>>>>>> cb23254152400662d1c87f436e3b38d8e420ff5a
 	"gorm.io/gorm"
 )
 
