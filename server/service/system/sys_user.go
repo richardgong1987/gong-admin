@@ -7,7 +7,7 @@ import (
 	systemReq "github.com/richardgong1987/server/model/system/request"
 	"time"
 
-	"github.com/gofrs/uuid/v5"
+	"github.com/google/uuid"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/system"
 	"github.com/richardgong1987/server/utils"
@@ -31,7 +31,7 @@ func (userService *UserService) Register(u system.SysUser) (userInter system.Sys
 	}
 	// 否则 附加uuid 密码hash加密 注册
 	u.Password = utils.BcryptHash(u.Password)
-	u.UUID = uuid.Must(uuid.NewV4())
+	u.UUID = uuid.New()
 	err = global.GVA_DB.Create(&u).Error
 	return u, err
 }

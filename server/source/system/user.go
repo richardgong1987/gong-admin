@@ -2,7 +2,7 @@ package system
 
 import (
 	"context"
-	"github.com/gofrs/uuid/v5"
+	"github.com/google/uuid"
 	"github.com/pkg/errors"
 	sysModel "github.com/richardgong1987/server/model/system"
 	"github.com/richardgong1987/server/service/system"
@@ -56,7 +56,7 @@ func (i *initUser) InitializeData(ctx context.Context) (next context.Context, er
 
 	entities := []sysModel.SysUser{
 		{
-			UUID:        uuid.Must(uuid.NewV4()),
+			UUID:        uuid.New(),
 			Username:    "admin",
 			Password:    adminPassword,
 			NickName:    "Mr.奇淼",
@@ -66,7 +66,7 @@ func (i *initUser) InitializeData(ctx context.Context) (next context.Context, er
 			Email:       "333333333@qq.com",
 		},
 		{
-			UUID:        uuid.Must(uuid.NewV4()),
+			UUID:        uuid.New(),
 			Username:    "a303176530",
 			Password:    password,
 			NickName:    "用户1",

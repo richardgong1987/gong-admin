@@ -2,16 +2,15 @@ package middleware
 
 import (
 	"errors"
-	"github.com/golang-jwt/jwt/v4"
+	"github.com/golang-jwt/jwt/v5"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/utils"
 	"strconv"
 	"time"
 
+	"github.com/gin-gonic/gin"
 	"github.com/richardgong1987/server/model/common/response"
 	"github.com/richardgong1987/server/service"
-
-	"github.com/gin-gonic/gin"
 )
 
 var jwtService = service.ServiceGroupApp.SystemServiceGroup.JwtService

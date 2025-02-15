@@ -1,7 +1,7 @@
 package system
 
 import (
-	"github.com/gofrs/uuid/v5"
+	"github.com/google/uuid"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/common"
 )
