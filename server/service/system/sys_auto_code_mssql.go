@@ -14,7 +14,7 @@ type autoCodeMssql struct{}
 
 func (s *autoCodeMssql) GetDB(businessDB string) (data []response.Db, err error) {
 	var entities []response.Db
-	sql := "select name AS 'database' from sysdatabases;"
+	sql := "select name AS 'database' from sys.databases;"
 	if businessDB == "" {
 		err = global.GVA_DB.Raw(sql).Scan(&entities).Error
 	} else {
