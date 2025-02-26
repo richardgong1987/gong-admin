@@ -3,15 +3,14 @@ package system
 import (
 	"errors"
 	"fmt"
-	"github.com/richardgong1987/server/model/common"
-	systemReq "github.com/richardgong1987/server/model/system/request"
-	"time"
-
 	"github.com/google/uuid"
 	"github.com/richardgong1987/server/global"
+	"github.com/richardgong1987/server/model/common"
 	"github.com/richardgong1987/server/model/system"
+	systemReq "github.com/richardgong1987/server/model/system/request"
 	"github.com/richardgong1987/server/utils"
 	"gorm.io/gorm"
+	"time"
 )
 
 //@author: [piexlmax](https://github.com/piexlmax)
