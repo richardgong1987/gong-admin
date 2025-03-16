@@ -3,9 +3,10 @@ package initialize
 import (
 	"context"
 	adapter "github.com/casbin/gorm-adapter/v3"
-	"github.com/richardgong1987/server/model/example"
-	sysModel "github.com/richardgong1987/server/model/system"
-	"github.com/richardgong1987/server/service/system"
+	"github.com/richardgong/server/model/example"
+	sysModel "github.com/richardgong/server/model/system"
+	"github.com/richardgong/server/plugin/announcement/model"
+	"github.com/richardgong/server/service/system"
 	"gorm.io/gorm"
 )
 
@@ -59,6 +60,9 @@ func (e *ensureTables) MigrateTable(ctx context.Context) (context.Context, error
 		example.ExaCustomer{},
 		example.ExaFileChunk{},
 		example.ExaFileUploadAndDownload{},
+		example.ExaAttachmentCategory{},
+
+		model.Info{},
 	}
 	for _, t := range tables {
 		_ = db.AutoMigrate(&t)
@@ -97,6 +101,9 @@ func (e *ensureTables) TableCreated(ctx context.Context) bool {
 		example.ExaCustomer{},
 		example.ExaFileChunk{},
 		example.ExaFileUploadAndDownload{},
+		example.ExaAttachmentCategory{},
+
+		model.Info{},
 	}
 	yes := true
 	for _, t := range tables {
