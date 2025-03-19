@@ -3,10 +3,10 @@ package initialize
 import (
 	"context"
 	adapter "github.com/casbin/gorm-adapter/v3"
-	"github.com/richardgong/server/model/example"
-	sysModel "github.com/richardgong/server/model/system"
-	"github.com/richardgong/server/plugin/announcement/model"
-	"github.com/richardgong/server/service/system"
+	"github.com/richardgong1987/server/model/example"
+	sysModel "github.com/richardgong1987/server/model/system"
+	"github.com/richardgong1987/server/plugin/announcement/model"
+	"github.com/richardgong1987/server/service/system"
 	"gorm.io/gorm"
 )
 
