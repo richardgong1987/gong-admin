@@ -4,7 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/flipped-aurora/gin-vue-admin/server/utils/autocode"
+	"github.com/richardgong1987/server/utils/autocode"
 	"go/ast"
 	"go/format"
 	"go/parser"
