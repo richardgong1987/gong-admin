@@ -47,7 +47,7 @@ func setup() {
 }
 
 func LounchServer() *gin.Engine {
-	global.GVA_VP = core.Viper("config-dev.yaml") // 初始化Viper
+	global.GVA_VP = core.Viper() // 初始化Viper
 	initialize.OtherInit()
 	global.GVA_LOG = core.Zap() // 初始化zap日志库
 	zap.ReplaceGlobals(global.GVA_LOG)
@@ -59,7 +59,7 @@ func LounchServer() *gin.Engine {
 		// 程序结束前关闭数据库链接
 		global.GVA_DB.DB()
 	}
-	return core.RunWindowsServer(true)
+	return core.RunServer()
 }
 
 func POST2(expectcode int, url string, stur interface{}, t *testing.T) *httptest.ResponseRecorder {

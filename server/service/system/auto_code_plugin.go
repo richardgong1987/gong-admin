@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/mholt/archiver/v4"
+	"github.com/mholt/archives"
 	cp "github.com/otiai10/copy"
 	"github.com/pkg/errors"
 	"github.com/richardgong1987/server/global"
@@ -154,7 +154,7 @@ func (s *autoCodePlugin) PubPlug(plugName string) (zipPath string, err error) {
 
 	fileName := plugName + ".zip"
 	// 创建一个新的zip文件
-	files, err := archiver.FilesFromDisk(nil, map[string]string{
+	files, err := archives.FilesFromDisk(context.Background(), nil, map[string]string{
 		webPath:    plugName + "/web/plugin/" + plugName,
 		serverPath: plugName + "/server/plugin/" + plugName,
 	})
@@ -168,8 +168,9 @@ func (s *autoCodePlugin) PubPlug(plugName string) (zipPath string, err error) {
 
 	// we can use the CompressedArchive type to gzip a tarball
 	// (compression is not required; you could use Tar directly)
-	format := archiver.Archive{
-		Archival: archiver.Zip{},
+	format := archives.CompressedArchive{
+		//Compression: archives.Gz{},
+		Archival: archives.Zip{},
 	}
 
 	// create the archive

@@ -12,11 +12,8 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/richardgong1987/server/global"
 	"github.com/richardgong1987/server/model/system"
-	"github.com/richardgong1987/server/service"
 	"go.uber.org/zap"
 )
-
-var userService = service.ServiceGroupApp.SystemServiceGroup.UserService
 
 func ErrorToEmail() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -26,11 +23,12 @@ func ErrorToEmail() gin.HandlerFunc {
 			username = claims.Username
 		} else {
 			id, _ := strconv.Atoi(c.Request.Header.Get("x-user-id"))
-			user, err := userService.FindUserById(id)
+			var u system.SysUser
+			err := global.GVA_DB.Where("id = ?", id).First(&u).Error
 			if err != nil {
 				username = "Unknown"
 			}
-			username = user.Username
+			username = u.Username
 		}
 		body, _ := io.ReadAll(c.Request.Body)
 		// 再重新写回请求体body中，ioutil.ReadAll会清空c.Request.Body中的数据

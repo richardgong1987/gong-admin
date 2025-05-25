@@ -10,10 +10,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/richardgong1987/server/model/common/response"
-	"github.com/richardgong1987/server/service"
 )
-
-var jwtService = service.ServiceGroupApp.SystemServiceGroup.JwtService
 
 func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -24,7 +21,7 @@ func JWTAuth() gin.HandlerFunc {
 			c.Abort()
 			return
 		}
-		if jwtService.IsBlacklist(token) {
+		if isBlacklist(token) {
 			response.NoAuth("您的帐户异地登陆或令牌失效", c)
 			utils.ClearToken(c)
 			c.Abort()
@@ -65,7 +62,7 @@ func JWTAuth() gin.HandlerFunc {
 			utils.SetToken(c, newToken, int(dr.Seconds()))
 			if global.GVA_CONFIG.System.UseMultipoint {
 				// 记录新的活跃jwt
-				_ = jwtService.SetRedisJWT(newToken, newClaims.Username)
+				_ = utils.SetRedisJWT(newToken, newClaims.Username)
 			}
 		}
 		c.Next()
@@ -77,4 +74,15 @@ func JWTAuth() gin.HandlerFunc {
 			c.Header("new-expires-at", newExpiresAt.(string))
 		}
 	}
+}
+
+//@author: [piexlmax](https://github.com/piexlmax)
+//@function: IsBlacklist
+//@description: 判断JWT是否在黑名单内部
+//@param: jwt string
+//@return: bool
+
+func isBlacklist(jwt string) bool {
+	_, ok := global.BlackCache.Get(jwt)
+	return ok
 }

@@ -7,14 +7,11 @@ import (
 	"github.com/richardgong1987/server/initialize"
 	"github.com/richardgong1987/server/service/system"
 	"go.uber.org/zap"
+	"time"
 )
 
-type server interface {
-	ListenAndServe() error
-}
-
-func RunWindowsServer(isUnitTest bool) *gin.Engine {
-	if global.GVA_CONFIG.System.UseMultipoint || global.GVA_CONFIG.System.UseRedis {
+func RunServer() *gin.Engine {
+	if global.GVA_CONFIG.System.UseRedis {
 		// 初始化redis服务
 		initialize.Redis()
 		if global.GVA_CONFIG.System.UseMultipoint {
@@ -36,16 +33,6 @@ func RunWindowsServer(isUnitTest bool) *gin.Engine {
 	Router := initialize.Routers()
 
 	address := fmt.Sprintf(":%d", global.GVA_CONFIG.System.Addr)
-	s := initServer(address, Router)
-
-	global.GVA_LOG.Info("server run success on ", zap.String("address", address))
-	if isUnitTest {
-		go func() {
-			global.GVA_LOG.Error(s.ListenAndServe().Error())
-		}()
-	} else {
-		global.GVA_LOG.Error(s.ListenAndServe().Error())
-	}
-
+	initServer(address, Router, 10*time.Minute, 10*time.Minute)
 	return Router
 }

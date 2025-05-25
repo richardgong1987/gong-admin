@@ -169,3 +169,9 @@ zap:
     show-line: true
     log-in-console: true
     retention-day: -1
+mcp:
+  name: GVA_MCP
+  version: v1.0.0
+  sse_path: /sse
+  message_path: /message
+  url_prefix: ''
