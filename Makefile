@@ -57,7 +57,7 @@ build-server-local:
 
 #打包前后端二合一镜像
 image: build
-	docker build -t ${REPOSITORY}/gin-vue-admin:${TAGS_OPT} -f deploy/docker/Dockerfile .
+	docker build -t ${REPOSITORY}/gong-vue-admin:${TAGS_OPT} -f deploy/docker/Dockerfile .
 
 #尝鲜版
 images: build build-image-web build-image-server

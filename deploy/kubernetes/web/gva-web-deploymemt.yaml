@@ -22,7 +22,7 @@ spec:
         version: gva-vue3
     spec:
       containers:
-        - name: gin-vue-admin-nginx-container
+        - name: gong-vue-admin-nginx-container
           image: registry.cn-hangzhou.aliyuncs.com/gva/web:latest
           imagePullPolicy: Always
           ports:

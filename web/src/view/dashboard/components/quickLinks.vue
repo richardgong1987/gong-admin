@@ -98,12 +98,12 @@
     {
       icon: Reading,
       title: '授权购买',
-      path: 'https://gin-vue-admin.com/empower/index.html'
+      path: 'https://gong-vue-admin.com/empower/index.html'
     },
     {
       icon: Document,
       title: '插件市场',
-      path: 'https://plugin.gin-vue-admin.com/#/layout/home'
+      path: 'https://plugin.gong-vue-admin.com/#/layout/home'
     }
   ]
 </script>

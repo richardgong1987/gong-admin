@@ -1,5 +1,5 @@
 name: 🐛 Bug report
-description: Report a bug to help us improve Gin-Vue-Admin
+description: Report a bug to help us improve gong-vue-admin
 title: "[Bug]: "
 labels: [bug]
 assignees:
@@ -11,7 +11,7 @@ body:
   - type: input
     id: gva
     attributes:
-      label: gin-vue-admin 版本
+      label: gong-vue-admin 版本
       description: 请输入您当前使用的项目版本?
       placeholder: 2.4.5Beta
     validations:

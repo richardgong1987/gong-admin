@@ -386,7 +386,7 @@
           <el-icon
             class="cursor-pointer"
             @click="
-              toDoc('https://www.gin-vue-admin.com/guide/web/button-auth.html')
+              toDoc('https://www.gong-vue-admin.com/guide/web/button-auth.html')
             "
           >
             <QuestionFilled />

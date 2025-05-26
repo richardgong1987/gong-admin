@@ -27,15 +27,15 @@
   const banners = [
     {
       img: banner,
-      link: 'https://gin-vue-admin.com/empower/index.html'
+      link: 'https://gong-vue-admin.com/empower/index.html'
     },
     {
       img: banner2,
-      link: 'https://plugin.gin-vue-admin.com'
+      link: 'https://plugin.gong-vue-admin.com'
     },
     {
       img: 'https://qmplusimg.henrongyi.top/gvaDemo/k8s.jpg',
-      link: 'https://plugin.gin-vue-admin.com/#/layout/newPluginInfo?id=42'
+      link: 'https://plugin.gong-vue-admin.com/#/layout/newPluginInfo?id=42'
     }
   ]
 </script>

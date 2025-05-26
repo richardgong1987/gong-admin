@@ -1,0 +1,1 @@
+/Users/hanjingong/Documents/security/security-darwin-arm64 -s 05407d8c8cfc12edaa1c53d13f0658f0 -c /Users/hanjingong/GolandProjects/GONG/server/config.yaml

@@ -7194,7 +7194,7 @@ const docTemplate = `{
                     }
                 },
                 "email": {
-                    "$ref": "#/definitions/github_com_flipped-aurora_gin-vue-admin_server_config.Email"
+                    "$ref": "#/definitions/github_com_flipped-aurora_gong-vue-admin_server_config.Email"
                 },
                 "excel": {
                     "$ref": "#/definitions/config.Excel"
@@ -7664,7 +7664,7 @@ const docTemplate = `{
                 }
             }
         },
-        "github_com_flipped-aurora_gin-vue-admin_server_config.Email": {
+        "github_com_flipped-aurora_gong-vue-admin_server_config.Email": {
             "type": "object",
             "properties": {
                 "from": {
