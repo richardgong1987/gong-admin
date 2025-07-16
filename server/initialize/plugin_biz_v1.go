@@ -29,6 +29,7 @@ func bizPluginV1(group ...*gin.RouterGroup) {
 		global.GVA_CONFIG.Email.Nickname,
 		global.GVA_CONFIG.Email.Port,
 		global.GVA_CONFIG.Email.IsSSL,
+		global.GVA_CONFIG.Email.IsLoginAuth,
 	))
 	holder(public, private)
 }
