@@ -9,7 +9,7 @@ import (
 
 // 测试 MCP 客户端连接
 func TestMcpClientConnection(t *testing.T) {
-	c, err := NewClient("http://localhost:8888/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
+	c, err := NewClient("http://localhost:8899/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
 	defer c.Close()
 	if err != nil {
 		t.Fatalf(err.Error())
@@ -18,7 +18,7 @@ func TestMcpClientConnection(t *testing.T) {
 
 func TestTools(t *testing.T) {
 	t.Run("currentTime", func(t *testing.T) {
-		c, err := NewClient("http://localhost:8888/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
+		c, err := NewClient("http://localhost:8899/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
 		defer c.Close()
 		if err != nil {
 			t.Fatalf("Failed to create client: %v", err)
@@ -48,7 +48,7 @@ func TestTools(t *testing.T) {
 
 	t.Run("getNickname", func(t *testing.T) {
 
-		c, err := NewClient("http://localhost:8888/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
+		c, err := NewClient("http://localhost:8899/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
 		defer c.Close()
 		if err != nil {
 			t.Fatalf("Failed to create client: %v", err)
@@ -91,7 +91,7 @@ func TestTools(t *testing.T) {
 }
 
 func TestGetTools(t *testing.T) {
-	c, err := NewClient("http://localhost:8888/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
+	c, err := NewClient("http://localhost:8899/sse", "test-client", "1.0.0", "gong-vue-admin MCP服务")
 	defer c.Close()
 	if err != nil {
 		t.Fatalf("Failed to create client: %v", err)

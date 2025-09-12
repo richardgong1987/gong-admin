@@ -36,7 +36,7 @@ services:
     container_name: gva-server
     restart: always
     ports:
-      - '8888:8888'
+      - '8899:8899'
     depends_on:
       mysql:
         condition: service_healthy
