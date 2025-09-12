@@ -208,7 +208,8 @@ func (s *autoCodePlugin) InitMenu(menuInfo request.InitMenu) (err error) {
 		},
 	}
 
-	err = global.GVA_DB.Find(&menus, "id in (?)", menuInfo.Menus).Error
+	// 查询菜单及其关联的参数和按钮
+	err = global.GVA_DB.Preload("Parameters").Preload("MenuBtn").Find(&menus, "id in (?)", menuInfo.Menus).Error
 	if err != nil {
 		return err
 	}
