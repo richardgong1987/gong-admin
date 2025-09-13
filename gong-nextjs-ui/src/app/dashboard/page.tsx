@@ -14,7 +14,8 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar"
-
+import {DataTable} from "@/components/data-table";
+import data from "./data.json"
 export default function Page() {
   return (
     <SidebarProvider>
@@ -50,6 +51,7 @@ export default function Page() {
           </div>
           <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
         </div>
+          <DataTable data={data} />
       </SidebarInset>
     </SidebarProvider>
   )
