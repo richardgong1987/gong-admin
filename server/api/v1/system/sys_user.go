@@ -73,6 +73,15 @@ func (b *BaseApi) Login(c *gin.Context) {
 	b.TokenNext(c, *user)
 }
 
+func (b *BaseApi) RenewToken(c *gin.Context) {
+	uuid := utils.GetUserUuid(c)
+	user, err := userService.GetUserInfo(uuid)
+	if err != nil {
+		response.FailWithMessage("renew failed:"+err.Error(), c)
+	}
+	b.TokenNext(c, user)
+}
+
 // TokenNext 登录以后签发jwt
 func (b *BaseApi) TokenNext(c *gin.Context, user system.SysUser) {
 	token, claims, err := utils.LoginToken(&user)
