@@ -4,12 +4,12 @@ import {Button} from "@/components/ui/button"
 import {Card, CardContent} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
-import {useState} from "react";
+import {MouseEventHandler, useState} from "react";
 import {UseUserInfoStore} from "@/store/userInfo-store";
 import {ApiUser} from "@/lib/api/system/api-user";
 import {toast} from "sonner";
 import {PAGES} from "@/lib/constant";
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 
 export function LoginForm({
                               className,
@@ -21,7 +21,7 @@ export function LoginForm({
         password: "",
         remember: false,
     });
-    const { Login } = UseUserInfoStore();
+    const {Login} = UseUserInfoStore();
 
     const [loading, setLoading] = useState(false);
 
@@ -32,7 +32,7 @@ export function LoginForm({
         });
     };
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit:MouseEventHandler<HTMLButtonElement> = async (e) => {
         e.preventDefault();
         setLoading(true);
         const res = await ApiUser.Login({
@@ -40,7 +40,6 @@ export function LoginForm({
             password: data.password,
         });
         setLoading(false);
-        console.log(res);
         if (res.code === 0 && res.data?.token) {
             toast.success("ログインに成功しました");
             Login(res.data.user, res.data.token, res.data.expiresAt);
@@ -56,7 +55,7 @@ export function LoginForm({
     };
 
     return (
-        <div className={cn("flex flex-col gap-6", className)} {...props}>
+        <div  className={cn("flex flex-col gap-6", className)} {...props}>
             <Card className="overflow-hidden p-0">
                 <CardContent className="grid p-0 md:grid-cols-2">
                     <form className="p-6 md:p-8">
@@ -68,14 +67,13 @@ export function LoginForm({
                                 </p>
                             </div>
                             <div className="grid gap-3">
-                                <Label htmlFor="email">Email</Label>
+                                <Label htmlFor="username">Username</Label>
                                 <Input
-                                    id="email"
+                                    id="username"
                                     type="text"
                                     name="username"
                                     onChange={handleChange}
                                     value={data.username}
-                                    placeholder="username"
                                     required
                                 />
                             </div>
@@ -89,9 +87,14 @@ export function LoginForm({
                                         Forgot your password?
                                     </a>
                                 </div>
-                                <Input id="password" type="password" required/>
+                                <Input id="password"
+                                       type="password"
+                                       name="password"
+                                       onChange={handleChange}
+                                       value={data.password}
+                                       required/>
                             </div>
-                            <Button type="submit" className="w-full">
+                            <Button onClick={handleSubmit}  type="button" className="w-full">
                                 Login
                             </Button>
                             <div
