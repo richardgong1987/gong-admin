@@ -32,6 +32,7 @@ import {
 import {UserStore} from "@/store/user-store";
 import {useEffect} from "react";
 import {PAGES} from "@/lib/constant";
+import {MenuStore} from "@/store/menu-store";
 
 export function NavUser({
                             user,
@@ -45,14 +46,17 @@ export function NavUser({
     const {isMobile} = useSidebar()
     const initAutoRenew = UserStore(s => s.initAutoRenew); // just the function
     const IsLoggedIn = UserStore(s => s.IsLoggedIn); // just the function
+    const Logout = UserStore(s => s.Logout); // just the function
     const token = UserStore(s => s.token); // just the function
     const storeUser = UserStore(s => s.user);              // select user only
+    const getMenu = MenuStore(s=>s.getMenu)
     useEffect(() => {
         if (!IsLoggedIn()) {
             location.href = PAGES.LOGIN;
             return
         }
         initAutoRenew();
+        getMenu()
     }, [token]);
 
     return (
@@ -117,7 +121,9 @@ export function NavUser({
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator/>
-                        <DropdownMenuItem>
+                        <DropdownMenuItem onClick={()=>{
+                            Logout()
+                        }}>
                             <LogOut/>
                             Log out
                         </DropdownMenuItem>

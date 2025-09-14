@@ -6,6 +6,7 @@ import { GetSessionStorage } from "@/utils/Biz-Utils";
 import { USER_STORAGE_KEY } from "@/store/constant";
 import { ApiUser } from "@/lib/api/system/api-user";
 import { IUser } from "@/lib/interface/user.interface";
+import {PAGES} from "@/lib/constant";
 
 type State = {
   user: IUser;
@@ -118,6 +119,7 @@ export const UserStore = create<State>()(
           await ApiUser.Logout();
           setTimeout(async () => {
             get().clear();
+              location.href = PAGES.LOGIN;
           }, 100);
         },
 

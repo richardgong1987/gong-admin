@@ -69,28 +69,9 @@ export class HttpService {
                 return unknown as T;
             }
             const result: any = await response.json();
-
-
             if (result.code !== 0) {
                 toast.error(result.msg || "エラーが発生しました");
                 return result;
-            }
-
-            const newToken = response.headers.get("new-token");
-            const newExpiresAt = response.headers.get("new-expires-at");
-            if (newToken) {
-                try {
-                    const sessionData = sessionStorage.getItem(USER_STORAGE_KEY);
-                    if (sessionData) {
-                        const parsed = JSON.parse(sessionData);
-                        parsed.state.token = newToken;
-                        parsed.expiresAt = newExpiresAt;
-                        sessionStorage.setItem(USER_STORAGE_KEY, JSON.stringify(parsed));
-                        console.log("✅ sessionStorage 中的 token 已自动更新");
-                    }
-                } catch (err) {
-                    console.warn("❌ 更新 token 失败:", err);
-                }
             }
             return result;
         } catch (error) {

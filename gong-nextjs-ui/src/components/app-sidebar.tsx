@@ -159,7 +159,6 @@ const data = {
 }
 
 export function AppSidebar({...props}: React.ComponentProps<typeof Sidebar>) {
-    MenuStore.getState().getMenu();
     return (
         <Sidebar collapsible="icon" {...props}>
             <SidebarHeader>
