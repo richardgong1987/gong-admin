@@ -5,7 +5,7 @@ import {Card, CardContent} from "@/components/ui/card"
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
 import {MouseEventHandler, useState} from "react";
-import {UseUserInfoStore} from "@/store/userInfo-store";
+import {UserStore} from "@/store/user-store";
 import {ApiUser} from "@/lib/api/system/api-user";
 import {toast} from "sonner";
 import {PAGES} from "@/lib/constant";
@@ -21,7 +21,7 @@ export function LoginForm({
         password: "",
         remember: false,
     });
-    const {Login} = UseUserInfoStore();
+    const {Login} = UserStore();
 
     const [loading, setLoading] = useState(false);
 

@@ -8,5 +8,5 @@ export enum RESPONSE_CODE {
 
 export enum PAGES {
     HOME = '/admin/dashboard',
-    LOGIN = '/auth/sign-in',
+    LOGIN = '/login',
 }

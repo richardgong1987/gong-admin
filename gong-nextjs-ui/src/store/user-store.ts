@@ -51,7 +51,7 @@ const emptyUserInfo: IUser = {
 };
 
 let renewTimer: any = null;
-export const UseUserInfoStore = create<State>()(
+export const UserStore = create<State>()(
   persist(
     (set, get) => {
       // 自动续签
