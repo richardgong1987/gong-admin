@@ -45,6 +45,7 @@ export function NavUser({
     const {isMobile} = useSidebar()
     const initAutoRenew = UserStore(s => s.initAutoRenew); // just the function
     const IsLoggedIn = UserStore(s => s.IsLoggedIn); // just the function
+    const token = UserStore(s => s.token); // just the function
     const storeUser = UserStore(s => s.user);              // select user only
     useEffect(() => {
         if (!IsLoggedIn()) {
@@ -52,7 +53,7 @@ export function NavUser({
             return
         }
         initAutoRenew();
-    }, [initAutoRenew, IsLoggedIn]);
+    }, [token]);
 
     return (
         <SidebarMenu>
