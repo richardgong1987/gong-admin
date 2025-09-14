@@ -36,7 +36,6 @@ import {TableCustomizeColumns} from "@/components/data-table/table-customize-col
 import {TableRowGroup} from "@/components/data-table/table-row-group";
 import {TableEmpty} from "@/components/data-table/table-empty";
 import {TableHeaderGroup} from "@/components/data-table/table-header";
-import {TableTbodyGroup} from "@/components/data-table/table-tbody-group";
 
 export const schema = z.object({
     id: z.number(),
@@ -244,10 +243,17 @@ export function DataTable({
             <TableCustomizeColumns table={table}/>
             <Table>
                 <TableHeaderGroup table={table}/>
-                <TableTbodyGroup table={table} columns={columns}/>
+                <TableBody className="**:data-[slot=table-cell]:first:w-8">
+                    {table.getRowModel().rows?.length ? (
+                            table.getRowModel().rows.map((row) => (
+                                <TableRowGroup key={row.id} row={row}/>
+                            ))
+                        ) :
+                        <TableEmpty columns={columns}/>
+                    }
+                </TableBody>
             </Table>
             <TablePagination table={table}/>
-
         </>
 
     )
