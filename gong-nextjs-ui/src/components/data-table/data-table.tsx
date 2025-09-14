@@ -31,11 +31,11 @@ import {
 import {Input} from "@/components/ui/input"
 import {Label} from "@/components/ui/label"
 import {Table, TableBody,} from "@/components/ui/table"
-import {TablePagination} from "@/components/data-table/table-pagiation";
-import {TableCustomizeColumns} from "@/components/data-table/table-customize-columns";
-import {TableRowGroup} from "@/components/data-table/table-row-group";
-import {TableEmpty} from "@/components/data-table/table-empty";
-import {TableHeaderGroup} from "@/components/data-table/table-header";
+import {TablePagination} from "@/components/data-table/components/table-pagiation";
+import {TableCustomizeColumns} from "@/components/data-table/components/table-customize-columns";
+import {TableRowGroup} from "@/components/data-table/components/table-row-group";
+import {TableEmpty} from "@/components/data-table/components/table-empty";
+import {TableHeaderGroup} from "@/components/data-table/components/table-header";
 
 export const schema = z.object({
     id: z.number(),
