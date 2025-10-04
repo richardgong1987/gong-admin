@@ -1,11 +1,11 @@
 import "../../globals.css"
-import {DataTable} from "@/components/data-table/data-table";
 import data from "./data.json"
+import DataTableCrud from "@/components/data-table-crud/DataTableCrud";
 
 export default function Page() {
     return (
         <>
-            <DataTable data={data}/>
+            <DataTableCrud />
         </>
     )
 }
