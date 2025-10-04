@@ -134,19 +134,6 @@
       </template>
 
       <el-form :model="formData" label-position="top" ref="elFormRef" :rules="rule" label-width="80px">
-        <el-form-item label="id:" prop="id">
-          <el-input v-model.number="formData.id" :clearable="true" placeholder="请输入id"/>
-        </el-form-item>
-        <el-form-item label="created_at:" prop="createdAt">
-          <el-date-picker v-model="formData.createdAt" type="date" style="width:100%" placeholder="选择日期"
-                          :clearable="true"/>
-        </el-form-item>
-        <el-form-item label="created_by:" prop="createdBy">
-          <el-input v-model.number="formData.createdBy" :clearable="true" placeholder="请输入created_by"/>
-        </el-form-item>
-        <el-form-item label="creator:" prop="creator">
-          <el-input v-model="formData.creator" :clearable="true" placeholder="请输入creator"/>
-        </el-form-item>
         <el-form-item label="番号:" prop="laptopCode">
           <el-input v-model="formData.laptopCode" :clearable="true" placeholder="请输入番号"/>
         </el-form-item>
@@ -188,6 +175,7 @@
       <el-descriptions :column="1" border>
         <el-descriptions-item label="id">
           {{ detailForm.id }}
+        </el-descriptions-item>
         <el-descriptions-item label="番号">
           {{ detailForm.laptopCode }}
         </el-descriptions-item>
@@ -238,10 +226,10 @@ import {
 } from '@/api/biz/bizLaptopManagement'
 
 // 全量引入格式化工具 请按需保留
-import {formatDate} from '@/utils/format'
 import {ElMessage, ElMessageBox} from 'element-plus'
 import {reactive, ref} from 'vue'
 import {useAppStore} from "@/pinia"
+import {InfoFilled} from "@element-plus/icons-vue";
 
 
 defineOptions({
