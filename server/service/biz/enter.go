@@ -1,4 +1,3 @@
 package biz
 
-type ServiceGroup struct {
-}
+type ServiceGroup struct{ BizLaptopManagementService }
