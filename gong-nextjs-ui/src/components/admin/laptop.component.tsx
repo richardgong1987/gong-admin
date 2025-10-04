@@ -33,6 +33,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow,} from "@/
 import {Sheet, SheetContent, SheetDescription, SheetFooter, SheetHeader, SheetTitle,} from "@/components/ui/sheet";
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage,} from "@/components/ui/form";
 import {Textarea} from "@/components/ui/textarea";
+import {BizService} from "@/lib/service/interface";
 
 /***** Schema *****/
 export const laptopSchema = z.object({
@@ -53,17 +54,7 @@ export type Laptop = z.infer<typeof laptopSchema>;
 type FormValues = z.output<typeof laptopSchema>;
 
 /***** Service interface mapping your Vue service *****/
-export interface BizLaptopService {
-    create: (payload: Omit<Laptop, "id">) => Promise<{ code: number } | void>;
-    delete: (id: number) => Promise<{ code: number } | void>;
-    deleteByIds: (ids: number[]) => Promise<{ code: number } | void>;
-    update: (payload: Laptop) => Promise<{ code: number } | void>;
-    find: (id: number) => Promise<{ code: number; data: Laptop } | Laptop>;
-    list: (params: { page: number; pageSize: number } & Partial<Laptop>) => Promise<{
-        code?: number;
-        data?: { list: Laptop[]; total: number; page: number; pageSize: number };
-        list?: Laptop[]; total?: number; page?: number; pageSize?: number;
-    }>;
+export interface BizLaptopService extends BizService<typeof laptopSchema>{
 }
 
 /** defaultService uses the same endpoints you posted (method + path) */
