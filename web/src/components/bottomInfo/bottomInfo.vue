@@ -6,7 +6,7 @@
         <a
           class="font-bold text-active"
           href="https://github.com/richardgong1987"
-        >GONG</a>
+        >gong-admin</a>
       </span>
     </div>
     <slot />
@@ -16,7 +16,7 @@
         <a
           class="font-bold text-active"
           href=""
-        >GONG团队</a>
+        >gong-admin团队</a>
       </span>
     </div>
   </div>

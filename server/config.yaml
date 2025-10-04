@@ -7,7 +7,7 @@ aliyun-oss:
     base-path: yourBasePath
 autocode:
     web: web/src
-    root: /Users/hanjingong/GolandProjects/GONG
+    root: /Users/hanjingong/GolandProjects/gong-admin
     server: server
     module: github.com/richardgong1987/server
     ai-path: ""
