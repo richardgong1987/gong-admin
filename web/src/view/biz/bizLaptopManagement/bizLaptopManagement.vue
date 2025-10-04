@@ -246,14 +246,6 @@ const showAllQuery = ref(false)
 // 自动化生成的字典（可能为空）以及字段
 const formData = ref({
   id: undefined,
-  createdAt: new Date(),
-  createdBy: undefined,
-  creator: '',
-  updatedAt: new Date(),
-  updatedBy: undefined,
-  updater: '',
-  deletedBy: undefined,
-  deletedAt: new Date(),
   laptopCode: '',
   officeLicense: '',
   microsoftAccount: '',
@@ -424,14 +416,6 @@ const closeDialog = () => {
   dialogFormVisible.value = false
   formData.value = {
     id: undefined,
-    createdAt: new Date(),
-    createdBy: undefined,
-    creator: '',
-    updatedAt: new Date(),
-    updatedBy: undefined,
-    updater: '',
-    deletedBy: undefined,
-    deletedAt: new Date(),
     laptopCode: '',
     officeLicense: '',
     microsoftAccount: '',
