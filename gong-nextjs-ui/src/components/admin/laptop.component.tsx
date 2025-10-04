@@ -69,7 +69,7 @@ export interface BizLaptopService {
 /** defaultService uses the same endpoints you posted (method + path) */
 const defaultService: BizLaptopService = {
     async create(payload) {
-        const r = await fetch(`/bizLaptopManagement/createBizLaptopManagement`, {
+        const r = await fetch(`/api/bizLaptopManagement/createBizLaptopManagement`, {
             method: "POST",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(payload),
@@ -78,18 +78,18 @@ const defaultService: BizLaptopService = {
         return r.json();
     },
     async delete(id) {
-        const r = await fetch(`/bizLaptopManagement/deleteBizLaptopManagement?id=${id}`, {method: "DELETE"});
+        const r = await fetch(`/api/bizLaptopManagement/deleteBizLaptopManagement?id=${id}`, {method: "DELETE"});
         if (!r.ok) throw new Error("删除失败");
         return r.json();
     },
     async deleteByIds(ids) {
-        const url = `/bizLaptopManagement/deleteBizLaptopManagementByIds?${new URLSearchParams(ids.map((v, i) => ["ids[" + i + "]", String(v)]) as any).toString()}`;
+        const url = `/api/bizLaptopManagement/deleteBizLaptopManagementByIds?${new URLSearchParams(ids.map((v, i) => ["ids[" + i + "]", String(v)]) as any).toString()}`;
         const r = await fetch(url, {method: "DELETE"});
         if (!r.ok) throw new Error("批量删除失败");
         return r.json();
     },
     async update(payload) {
-        const r = await fetch(`/bizLaptopManagement/updateBizLaptopManagement`, {
+        const r = await fetch(`/api/bizLaptopManagement/updateBizLaptopManagement`, {
             method: "PUT",
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(payload),
@@ -98,7 +98,7 @@ const defaultService: BizLaptopService = {
         return r.json();
     },
     async find(id) {
-        const r = await fetch(`/bizLaptopManagement/findBizLaptopManagement?id=${id}`);
+        const r = await fetch(`/api/bizLaptopManagement/findBizLaptopManagement?id=${id}`);
         if (!r.ok) throw new Error("查询失败");
         const j = await r.json();
         return j?.data ?? j; // support either {data} or raw
@@ -108,7 +108,7 @@ const defaultService: BizLaptopService = {
         Object.entries(params).forEach(([k, v]) => {
             if (v !== undefined && v !== "") usp.append(k, String(v));
         });
-        const r = await fetch(`/bizLaptopManagement/getBizLaptopManagementList?${usp.toString()}`);
+        const r = await fetch(`/api/bizLaptopManagement/getBizLaptopManagementList?${usp.toString()}`);
         if (!r.ok) throw new Error("获取失败");
         const j = await r.json();
         return j;
