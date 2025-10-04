@@ -51,7 +51,6 @@
           <el-input v-model="searchInfo.remark" placeholder="搜索条件"/>
         </el-form-item>
 
-
         <template v-if="showAllQuery">
           <!-- 将需要控制显示状态的查询条件添加到此范围内 -->
         </template>
@@ -84,48 +83,17 @@
         <el-table-column type="selection" width="55"/>
 
         <el-table-column align="left" label="id" prop="id" width="120"/>
-
-        <el-table-column align="left" label="created_at" prop="createdAt" width="180">
-          <template #default="scope">{{ formatDate(scope.row.createdAt) }}</template>
-        </el-table-column>
-        <el-table-column align="left" label="created_by" prop="createdBy" width="120"/>
-
-        <el-table-column align="left" label="creator" prop="creator" width="120"/>
-
-        <el-table-column align="left" label="updated_at" prop="updatedAt" width="180">
-          <template #default="scope">{{ formatDate(scope.row.updatedAt) }}</template>
-        </el-table-column>
-        <el-table-column align="left" label="updated_by" prop="updatedBy" width="120"/>
-
-        <el-table-column align="left" label="updater" prop="updater" width="120"/>
-
-        <el-table-column align="left" label="deleted_by" prop="deletedBy" width="120"/>
-
-        <el-table-column align="left" label="deletedAt字段" prop="deletedAt" width="180">
-          <template #default="scope">{{ formatDate(scope.row.deletedAt) }}</template>
-        </el-table-column>
         <el-table-column align="left" label="番号" prop="laptopCode" width="120"/>
-
         <el-table-column align="left" label="ライセンスキー" prop="officeLicense" width="120"/>
-
         <el-table-column align="left" label="Microsoft Account" prop="microsoftAccount" width="120"/>
-
         <el-table-column align="left" label="PRODUCT_ID" prop="productId" width="120"/>
-
         <el-table-column align="left" label="SKU_ID" prop="skuId" width="120"/>
-
         <el-table-column align="left" label="LICENSE_NAME" prop="licenseName" width="120"/>
-
         <el-table-column align="left" label="LICENSE_DESCRIPTION" prop="licenseDescription" width="120"/>
-
         <el-table-column align="left" label="BETA_EXPIRATION" prop="betaExpiration" width="120"/>
-
         <el-table-column align="left" label="LICENSE_STATUS" prop="licenseStatus" width="120"/>
-
         <el-table-column align="left" label="status" prop="status" width="120"/>
-
         <el-table-column align="left" label="remark" prop="remark" width="120"/>
-
         <el-table-column align="left" label="操作" fixed="right" :min-width="appStore.operateMinWith">
           <template #default="scope">
             <el-button type="primary" link class="table-button" @click="getDetails(scope.row)">
@@ -179,23 +147,6 @@
         <el-form-item label="creator:" prop="creator">
           <el-input v-model="formData.creator" :clearable="true" placeholder="请输入creator"/>
         </el-form-item>
-        <el-form-item label="updated_at:" prop="updatedAt">
-          <el-date-picker v-model="formData.updatedAt" type="date" style="width:100%" placeholder="选择日期"
-                          :clearable="true"/>
-        </el-form-item>
-        <el-form-item label="updated_by:" prop="updatedBy">
-          <el-input v-model.number="formData.updatedBy" :clearable="true" placeholder="请输入updated_by"/>
-        </el-form-item>
-        <el-form-item label="updater:" prop="updater">
-          <el-input v-model="formData.updater" :clearable="true" placeholder="请输入updater"/>
-        </el-form-item>
-        <el-form-item label="deleted_by:" prop="deletedBy">
-          <el-input v-model.number="formData.deletedBy" :clearable="true" placeholder="请输入deleted_by"/>
-        </el-form-item>
-        <el-form-item label="deletedAt字段:" prop="deletedAt">
-          <el-date-picker v-model="formData.deletedAt" type="date" style="width:100%" placeholder="选择日期"
-                          :clearable="true"/>
-        </el-form-item>
         <el-form-item label="番号:" prop="laptopCode">
           <el-input v-model="formData.laptopCode" :clearable="true" placeholder="请输入番号"/>
         </el-form-item>
@@ -237,31 +188,6 @@
       <el-descriptions :column="1" border>
         <el-descriptions-item label="id">
           {{ detailForm.id }}
-        </el-descriptions-item>
-        <el-descriptions-item label="created_at">
-          {{ detailForm.createdAt }}
-        </el-descriptions-item>
-        <el-descriptions-item label="created_by">
-          {{ detailForm.createdBy }}
-        </el-descriptions-item>
-        <el-descriptions-item label="creator">
-          {{ detailForm.creator }}
-        </el-descriptions-item>
-        <el-descriptions-item label="updated_at">
-          {{ detailForm.updatedAt }}
-        </el-descriptions-item>
-        <el-descriptions-item label="updated_by">
-          {{ detailForm.updatedBy }}
-        </el-descriptions-item>
-        <el-descriptions-item label="updater">
-          {{ detailForm.updater }}
-        </el-descriptions-item>
-        <el-descriptions-item label="deleted_by">
-          {{ detailForm.deletedBy }}
-        </el-descriptions-item>
-        <el-descriptions-item label="deletedAt字段">
-          {{ detailForm.deletedAt }}
-        </el-descriptions-item>
         <el-descriptions-item label="番号">
           {{ detailForm.laptopCode }}
         </el-descriptions-item>
