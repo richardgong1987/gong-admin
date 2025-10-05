@@ -13,14 +13,10 @@ import {
     type VisibilityState,
     type RowSelectionState,
     type Updater,
+    type ColumnDef,
 } from "@tanstack/react-table";
 import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeader,
-    TableRow,
+    Table, TableBody, TableCell, TableHead, TableHeader, TableRow,
 } from "@/components/ui/table";
 import type { Laptop } from "./schema";
 
@@ -34,9 +30,7 @@ interface TableStateProps {
     columnFilters: ColumnFiltersState;
     setColumnFilters: React.Dispatch<React.SetStateAction<ColumnFiltersState>>;
     pagination: { pageIndex: number; pageSize: number };
-    setPagination: React.Dispatch<
-        React.SetStateAction<{ pageIndex: number; pageSize: number }>
-    >;
+    setPagination: React.Dispatch<React.SetStateAction<{ pageIndex: number; pageSize: number }>>;
 }
 
 export function LaptopTable({
@@ -45,50 +39,19 @@ export function LaptopTable({
                                 state,
                             }: {
     data: Laptop[];
-    columns: any;
+    columns: ColumnDef<Laptop, any>[];
     state: TableStateProps;
 }) {
-    // fix type signatures using Updater<T> generic
-    const handleRowSelectionChange = (updaterOrValue: Updater<RowSelectionState>) =>
-        state.setRowSelection((old) =>
-            typeof updaterOrValue === "function"
-                ? (updaterOrValue as (old: RowSelectionState) => RowSelectionState)(old)
-                : updaterOrValue
-        );
-
-    const handleSortingChange = (updaterOrValue: Updater<SortingState>) =>
-        state.setSorting((old) =>
-            typeof updaterOrValue === "function"
-                ? (updaterOrValue as (old: SortingState) => SortingState)(old)
-                : updaterOrValue
-        );
-
-    const handleColumnFiltersChange = (
-        updaterOrValue: Updater<ColumnFiltersState>
-    ) =>
-        state.setColumnFilters((old) =>
-            typeof updaterOrValue === "function"
-                ? (updaterOrValue as (old: ColumnFiltersState) => ColumnFiltersState)(old)
-                : updaterOrValue
-        );
-
-    const handleColumnVisibilityChange = (
-        updaterOrValue: Updater<VisibilityState>
-    ) =>
-        state.setColumnVisibility((old) =>
-            typeof updaterOrValue === "function"
-                ? (updaterOrValue as (old: VisibilityState) => VisibilityState)(old)
-                : updaterOrValue
-        );
-
-    const handlePaginationChange = (
-        updaterOrValue: Updater<{ pageIndex: number; pageSize: number }>
-    ) =>
-        state.setPagination((old) =>
-            typeof updaterOrValue === "function"
-                ? (updaterOrValue as (old: typeof state.pagination) => typeof state.pagination)(old)
-                : updaterOrValue
-        );
+    const handleRowSelectionChange = (u: Updater<RowSelectionState>) =>
+        state.setRowSelection((old) => (typeof u === "function" ? u(old) : u));
+    const handleSortingChange = (u: Updater<SortingState>) =>
+        state.setSorting((old) => (typeof u === "function" ? u(old) : u));
+    const handleColumnFiltersChange = (u: Updater<ColumnFiltersState>) =>
+        state.setColumnFilters((old) => (typeof u === "function" ? u(old) : u));
+    const handleColumnVisibilityChange = (u: Updater<VisibilityState>) =>
+        state.setColumnVisibility((old) => (typeof u === "function" ? u(old) : u));
+    const handlePaginationChange = (u: Updater<{ pageIndex: number; pageSize: number }>) =>
+        state.setPagination((old) => (typeof u === "function" ? u(old) : u));
 
     const table = useReactTable({
         data,
@@ -123,7 +86,7 @@ export function LaptopTable({
                                 <TableHead key={header.id} style={{ width: header.getSize() }}>
                                     {header.isPlaceholder
                                         ? null
-                                        : (header.column.columnDef.header as React.ReactNode)}
+                                        : flexRender(header.column.columnDef.header, header.getContext())}
                                 </TableHead>
                             ))}
                         </TableRow>
@@ -132,10 +95,7 @@ export function LaptopTable({
                 <TableBody>
                     {table.getRowModel().rows.length ? (
                         table.getRowModel().rows.map((row) => (
-                            <TableRow
-                                key={row.id}
-                                data-state={row.getIsSelected() && "selected"}
-                            >
+                            <TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
                                 {row.getVisibleCells().map((cell) => (
                                     <TableCell key={cell.id}>
                                         {flexRender(cell.column.columnDef.cell, cell.getContext())}
@@ -145,10 +105,7 @@ export function LaptopTable({
                         ))
                     ) : (
                         <TableRow>
-                            <TableCell
-                                colSpan={table.getAllColumns().length}
-                                className="h-24 text-center text-muted-foreground"
-                            >
+                            <TableCell colSpan={table.getAllColumns().length} className="h-24 text-center text-muted-foreground">
                                 数据为空
                             </TableCell>
                         </TableRow>

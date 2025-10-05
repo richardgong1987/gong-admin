@@ -87,7 +87,7 @@ export function LaptopManagementTable({service = defaultService}: { service?: Bi
         await load();
     };
 
-    const columns = useLaptopColumns({
+    const tableColumns = useLaptopColumns({
         onView: async (row) => {
             const found: any = await service.find(row.id);
             const d: Laptop = (found?.data ?? found) as Laptop;
@@ -143,7 +143,7 @@ export function LaptopManagementTable({service = defaultService}: { service?: Bi
 
             <LaptopTable
                 data={data}
-                columns={columns}
+                columns={tableColumns}
                 state={{
                     sorting,
                     setSorting,
